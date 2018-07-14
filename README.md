@@ -13,3 +13,5 @@
 5. sort the output[drug] set by the decreasing drug_cost with sorted method
 6. write results into the top_cost_drug.txt file
 
+# Testing
+Testing are performed successfully in Jupyter notebook with the itcont.txt file, de_cc_data.txt.
