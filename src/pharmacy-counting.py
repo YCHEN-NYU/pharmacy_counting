@@ -1,5 +1,6 @@
 # YCHEN-NYU
-# check if a string object can be converted into integers
+
+# check if a string object can be converted into float
 def isFloat(value):
     try:
         float(value)
@@ -27,13 +28,12 @@ def processData(inFile, splitter):
             drug_name = temp[-2]
             drug_cost = temp[-1]
 
-        # start counting from the second row by skipping using isInt condition for the drug_cost
+        # start counting from the second row by skipping using isFloat condition for the drug_cost
         if(isFloat(drug_cost)):
             # if the current drug_name is in the dictionary, then increment counting by 1, add drug_cost
-            # TODO
             # prescriber_name has to be unique for num_prescriber++
             if(drug_name in output):
-                # if prescriber_name is not in the name Set, then add the prescriber_name, increment num_prescriber, add cost
+                # if prescriber_name is not in the drug_name set, then add the prescriber_name, increment num_prescriber, add cost
                 if(prescriber_name not in output[drug_name][0]):
                     output[drug_name] = [set(prescriber_name), output[drug_name][1] + 1, output[drug_name][2] + float(drug_cost)]
                 # if prescriber_name is in the name Set, then don't add the prescriber_name, don't increment num_prescriber, add cost
